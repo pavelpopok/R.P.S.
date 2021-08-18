@@ -11,11 +11,9 @@ function computerPlay() {
       return "Scissors";
     }
 }
-
 // set starter counter
     let aiScore = 0;
     let playerScore = 0;
-
 // ask the user to make a choice and compare it with the choice of the AI, 
 // also assign the number of victories
 function battleRound(playerSelection, computerSelection) {
@@ -47,16 +45,18 @@ function battleRound(playerSelection, computerSelection) {
       return "You Loose! Rock beats Scissors";
     } else return "U misspelled, try again";
   }
-  // final score of the game
+// final score of the game
 function finalScores() {
     if (aiScore > playerScore) {
         return "What a shame you have been beaten by AI!";
     }
     if (playerScore > aiScore) {
-        return "Congrats, you arew smarter then AI!";
+        return "Congrats, you are smarter then AI!";
+    }
+    if (aiScore === playerScore) {
+        return "Meh, that happens. You are the same dumb as AI or likewise!"
     }
 }
-
 // five rounds of the game with the conclusion of the results
     for (let i = 0; i < 5; i++) {
         const playerSelection = (prompt("Choose: Rock, Paper or Scissors") ?? "")
