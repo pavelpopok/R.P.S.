@@ -47,3 +47,24 @@ function battleRound(playerSelection, computerSelection) {
       return "You Loose! Rock beats Scissors";
     } else return "U misspelled, try again";
   }
+  // final score of the game
+function finalScores() {
+    if (aiScore > playerScore) {
+        return "What a shame you have been beaten by AI!";
+    }
+    if (playerScore > aiScore) {
+        return "Congrats, you arew smarter then AI!";
+    }
+}
+
+// five rounds of the game with the conclusion of the results
+    for (let i = 0; i < 5; i++) {
+        const playerSelection = (prompt("Choose: Rock, Paper or Scissors") ?? "")
+        .trim()
+        .toLowerCase();
+        const computerSelection = computerPlay();
+        console.log("AI choose: " + computerSelection);
+        console.log(battleRound(playerSelection, computerSelection));
+        console.log("AI score: " + aiScore, "Player score: " + playerScore);
+    }
+console.log(finalScores())
